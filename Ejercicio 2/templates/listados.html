@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Datos {{ categoria }}</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Top 10 Países con mayores emiciones de CO</h1>
+  <h3> {{ subtitulo }} </h3>
+    <ol>
+{% for pais in datosPaises%}
+  <li>{{ pais[0] }}, {{ pais[1] }} [{{ pais[2] }}] </li>
+{% endfor %}
+    </ol>
+
+<a href="{{ url_for('index')}}">Volver al menu</a>
+</body>
+</html>

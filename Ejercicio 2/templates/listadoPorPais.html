@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Datos por pais</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>{{ pais }}</h1>
+  <h3> {{ subtitulo }}</h3>
+    <ul>
+{% for dato in datos %}
+      {%if dato[0] == 'total'%}
+        <li> Total: {{ dato[1] }} [{{ dato[2] }}] </li>
+      {% else %}
+        <li> PerCapita: {{ dato[1] }} [{{ dato[2] }}] </li> 
+      {% endif %}
+{% endfor %}
+    </ul>
+
+<a href="{{ url_for('index')}}">Volver al menu</a>
+</body>
+</html>

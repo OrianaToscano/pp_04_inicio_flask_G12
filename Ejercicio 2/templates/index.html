@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Main</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>INDEX</h1>
+    <ul>
+      <li> <h3> <a href="{{ url_for('ayuda')}}">Acerca de...</a> </h3> </li>
+      <li> <h3> <a href="{{ url_for('listadoPerCapita')}}">Top 10 de países con mayor emisión, segun datos per Capita</a> </h3> </li>
+      <li>  <h3> <a href="{{ url_for('listadoTotal')}}">Top 10 de países con mayor emisión, segun datos Totales</a> </h3> </li> 
+      <li>  <h3> <a href="{{ url_for('listadoPorPais', pais='Argentina')}}">Emisiones de CO2 por país</a> </h3> <p>(Por default es Argentina, para buscar otros países modificar la barra de búsqueda)</p></li> 
+    </ul>
+
+
+</body>
+</html>
