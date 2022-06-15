@@ -9,8 +9,6 @@ def index():
     return render_template('index.html')
 
 
-
-#
 @app.route('/dado')
 def dado():
     num = randrange(1,7)
@@ -18,8 +16,6 @@ def dado():
                            numero_dado = num)
 
 
-
-#
 @app.route('/fecha')
 def fecha():
   mes = randrange(1,13)
@@ -31,8 +27,6 @@ def fecha():
                          fecha_html=fecha)
 
 
-#
-  
 @app.route('/color')
 def color():
   color = ''
@@ -47,8 +41,7 @@ def color():
                         color_hexa = color_html)
   
 
-
-#
+    
 @app.route('/dado/<n>')
 def mostrarNumeros(n):
   try:  
@@ -64,7 +57,7 @@ def mostrarNumeros(n):
   except ValueError:
     return "El valor ingresado en la direccion debe ser un numero entero"
 
-#
+
 def diasAleatorios(unMes):
   if unMes in [1,3,5,7,8,10,12]:
       dia = randrange(1,32)
@@ -74,6 +67,7 @@ def diasAleatorios(unMes):
       dia = randrange(0,29)
 
   return dia
+    
     
 @app.route('/fecha/<y>')
 def mostrarFechaPorY(y):
@@ -92,11 +86,6 @@ def mostrarFechaPorY(y):
 
   except ValueError:
     return "El valor ingresado en la direccion debe ser un numero entero"
-
-
-
-  
-  
 
 
 @app.route('/fecha/<y>/<m>')
@@ -118,9 +107,5 @@ def mostrarFechaPorYM(y,m):
   except ValueError:
     return "El valor ingresado en la direccion debe ser un numero entero"
 
-
-
-  
-  
 
 app.run(host='0.0.0.0', port=81)
